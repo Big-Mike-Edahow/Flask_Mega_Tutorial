@@ -1,0 +1,39 @@
+<!-- profile.html -->
+
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="profile-container">
+    <figure>
+        <img src="{{ url_for('static', filename='images/Profile.png') }}" alt="User profile" width="200px">
+    </figure>
+    <div>
+        <h1>User: {{ user.username }}</h1><br>
+        <p>Email: {{ user.email }}</p>
+        <p>Account Created: <i>{{ user.created }}</i></p>
+        {% if user.visited %}<p>Last visit: <i>{{ user.visited }}</i></p><br><br>{% endif %}
+        {% if user.nickname %}<p>Nickname: <b><i>{{ user.nickname }}</i></b></p>{% endif %}
+    </div>
+    <div>
+        {% if user.about %}<p><b>About me: </b>{{ user.about }}</p><br>{% endif %}
+        {% if user == current_user %}
+        <button><a href="{{ url_for('edit_profile') }}">Edit your profile</a></button>
+        {% endif %}
+    </div>
+</section>
+<br>
+<hr><br>
+<section class="posts">
+    {% for post in posts %}
+    <table>
+        <tr valign="top">
+            <td><img src="{{ url_for('static', filename='images/Profile.png') }}" alt="Profile picture" width="50px">
+            </td>
+            <td>On {{ post.created }}, <b>{{ post.author }}</b> <i>said:</i><br>"{{ post.body }}"</td>
+        </tr>
+    </table>
+    {% endfor %}
+</section>
+
+{% endblock %}

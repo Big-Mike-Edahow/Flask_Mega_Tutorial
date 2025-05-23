@@ -1,0 +1,30 @@
+<!-- edit.html -->
+
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="center">
+    <h1 class="headline-h1">Edit Post</h1>
+    <br><br>
+    <form method="POST" action="{{ url_for('edit_post', id=post.id) }}">
+        <p>
+            {{ form.hidden_tag() }}
+        </p>
+        <p>
+            {{ form.title.label }}
+            {{ form.title() }}
+        </p>
+        <p>
+            {{ form.body.label }}
+            {{ form.body(cols=50, rows=4) }}
+        </p>
+        <br>
+        <p>
+            <input type="submit" value="Submit">
+        </p>
+    </form>
+</section>
+
+{% endblock %}
+

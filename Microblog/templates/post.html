@@ -1,0 +1,48 @@
+<!-- post.html -->
+
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="post">
+    <h1>{{ post.title }}</h1>
+    <p>Written By <a href="{{ url_for('profile', username=post.author) }}">{{ post.author }}</a> on {{ post.created }}
+    </p>
+    <p>{{ post.body | safe }}</p>
+    <br>
+    <span>
+        <a class="edit-button" href="{{ url_for('edit_post', id=post.id) }}">Edit Post</a>
+        <a class="edit-button" href="{{ url_for('delete', id=post.id) }}">Delete Post</a>
+    </span>
+    <br><br>
+    <div class="comments">
+        <h3>Comments: 💬</h3>
+        {% for comment in comments %}
+
+        <div>
+            <strong>By: {{ comment.author }}</strong><br>
+            <strong>Date Posted: {{ comment.created }}</strong><br>
+            <em>{{ comment.comment }}</em><br>
+        </div>
+
+        {% endfor %}
+        <br>
+        <h4>New Comment:</h4>
+        <br>
+        <form method="POST" action="{{ url_for('post', post_id=post.id) }}">
+            <p>
+                {{ form.hidden_tag() }}
+            </p>
+            <p>
+                {{ form.comment.label }}
+                {{ form.comment() }}
+            </p>
+            <br>
+            <p>
+                <input type="submit" value="Add Comment">
+            </p>
+        </form>
+    </div>
+</section>
+
+{% endblock %}

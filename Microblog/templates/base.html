@@ -1,0 +1,48 @@
+<!-- base.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../static/images/favicon.ico" type="image/png" rel="shortcut icon">
+    <link href="../static/css/style.css" type="text/css" rel="stylesheet">
+    {% if title %}
+    <title>{{ title }} - Microblog</title>
+    {% else %}
+    <title>Welcome to Microblog</title>
+    {% endif %}
+</head>
+
+<body>
+    <nav>
+        <h1>Microblog! ✍️</h1>
+        <a href="{{ url_for('index') }}">Home 🎲</a>
+        {% if current_user.is_anonymous %}
+        <a href="{{ url_for('login') }}">Login ➡️</a>
+        <a href="{{ url_for('register') }}">Register  🖥️</a>
+        {% else %}
+        <a href="{{ url_for('create') }}">Create ✨</a>
+        <a href="{{ url_for('profile', username=current_user.username) }}">Profile 👤</a>
+        <a href="{{ url_for('logout') }}">Logout ⬅️</a>
+        {% endif %}
+        <a href="{{ url_for('about') }}">About ℹ️</a>
+    </nav>
+    <main>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <div class="flash">{{ message }}</div>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+        {% block content %}
+
+        {% endblock %}
+    </main>
+</body>
+
+</html>

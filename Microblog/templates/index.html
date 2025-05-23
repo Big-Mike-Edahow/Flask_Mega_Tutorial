@@ -1,0 +1,27 @@
+<!-- index.html -->
+
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="center">
+    <h1 class="headline-h1">Welcome to the blog, {{ current_user.username }}! 👋</h1>
+    <br>
+</section>
+<section class="container">
+    <h2>Latest Posts!</h2>
+    <div class="posts">
+        {% for post in posts %}
+        <h4>Author: {{ post.author }} </h4>
+        <h5>Title: {{ post.title }}</h5>
+        <p>{{ post.body | truncate(500) | safe }}
+            <a href="{{ url_for('post', post_id=post.id) }}">Read More</a>
+        </p>
+        <p>Created: <i>{{ post.created }}</i> </p>
+        <br><hr><br>
+        {% endfor %}
+    </div>
+</section>
+
+{% endblock %}
+

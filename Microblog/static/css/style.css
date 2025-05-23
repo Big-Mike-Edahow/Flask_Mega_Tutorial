@@ -1,0 +1,328 @@
+/* style.css */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: powderblue;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    justify-items: center;
+    align-items: center;
+    width: 100%;
+    height: 80px;
+    background-color: #d1c6e6;
+    border-bottom: 2px solid black;
+}
+
+nav h1 {
+    font-size: 36px;
+    font-weight: bold;
+    background-image: url("/static/images/logo.png");
+    background-repeat: no-repeat;
+    background-position: 0px 0px;
+    padding-left: 50px;
+    color: black;
+}
+
+nav a {
+    font-size: 1.5em;
+    text-decoration: none;
+    color: black;
+}
+
+nav a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+main {
+    margin: 20px 30px 30px 30px;
+    padding: 0 20px;
+}
+
+.center {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.headline-h1 {
+    font-size: 2em;
+    font-weight: 600;
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding: 10px 5px 5px 5px;
+    background-color: ghostwhite;
+    border: 1px solid black;
+    border-radius: 3px;
+}
+
+hr {
+    width: 100%;
+    height: 5px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    color: black;
+    background-color: black;
+}
+
+figure>img {
+    border: 3px solid black;
+    border-radius: 5px;
+}
+
+button {
+    font-size: 1.1em;
+    font-weight: 500;
+    padding: 2px 5px;
+    color: black;
+    background-color: rgb(230, 192, 192);
+    border: 2px solid black;
+    border-radius: 3px;
+    box-shadow: 2px 2px 2px black;
+    text-decoration: none;
+}
+
+button>a {
+    color: black;
+    text-decoration: none;
+}
+
+button:active {
+    box-shadow: inset 2px 2px 2px;
+}
+
+
+.edit-button {
+    font-size: .8em;
+    font-weight: 500;
+    padding: 2px 5px;
+    color: black;
+    background-color: rgb(230, 192, 192);
+    border: 2px solid black;
+    border-radius: 3px;
+    box-shadow: 2px 2px 2px black;
+    text-decoration: none;
+}
+
+.edit-button>a {
+    color: black;
+    text-decoration: none;
+}
+
+.edit-button:active {
+    box-shadow: inset 2px 2px 2px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 10px;
+}
+
+.posts {
+    font-size: 1.2em;
+    font-weight: 500;
+    padding: 10px;
+    background-color: rgb(80, 232, 174);
+    border: 2px solid lightseagreen;
+    border-radius: 5px;
+}
+
+.post {
+    font-size: 1.2em;
+    font-weight: 500;
+    padding: 10px;
+    background-color: rgb(80, 232, 174);
+    border: 2px solid lightseagreen;
+    border-radius: 5px;
+}
+
+.comments {
+    font-size: .8em;
+}
+
+td {
+    margin: 3px;
+    padding: 3px;
+}
+
+td>img {
+    border: 2px solid black;
+    border-radius: 3px;
+}
+
+.flash {
+    width: 500px;
+    font-size: 1.1em;
+    font-weight: 600;
+    margin: 1em 0;
+    padding: 1em;
+    color: black;
+    background: lightpink;
+    border: 1px solid rgb(230, 40, 138);
+}
+
+form {
+    display: table;
+}
+
+form p {
+    display: table-row;
+}
+
+form label {
+    display: table-cell;
+}
+
+form input {
+    display: table-cell;
+}
+
+form label {
+    font-size: 1.4em;
+    font-weight: 600;
+    color: black;
+}
+
+form input[type=text] {
+    width: 100%;
+    font-size: 1.4em;
+    font-weight: 500;
+    margin: 2px 5px;
+    padding: 2px 5px;
+    color: black;
+    background: #FFFFFF;
+    border: 2px solid black;
+    border-radius: 3px;
+}
+
+form input[type=password] {
+    width: 100%;
+    font-size: 1.4em;
+    font-weight: 500;
+    margin: 2px 5px;
+    padding: 2px 5px;
+    color: black;
+    background: #FFFFFF;
+    border: 2px solid black;
+    border-radius: 3px;
+}
+
+form textarea {
+    width: 100%;
+    font-size: 1.4em;
+    font-weight: 500;
+    margin: 2px 5px;
+    padding: 2px 5px;
+    color: black;
+    background: #FFFFFF;
+    border: 2px solid black;
+    border-radius: 3px;
+}
+
+form input[type=submit] {
+    font-size: 1.2em;
+    font-weight: 500;
+    padding: 2px 5px;
+    color: black;
+    background-color: rgb(230, 192, 192);
+    border: 2px solid black;
+    border-radius: 3px;
+    box-shadow: 2px 2px 2px black;
+}
+
+form input[type=submit]:active {
+    box-shadow: inset 2px 2px 2px;
+}
+
+
+.profile-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    gap: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.profile-container p {
+    font-size: 1.2em;
+}
+
+.about-container {
+    position: relative;
+    top: 50px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+}
+
+.outer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 250px;
+    height: 250px;
+
+    border: 3px solid Black;
+    background-color: rgb(236, 223, 236);
+}
+
+.inner {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    width: 230px;
+    height: 230px;
+    font: bold 4em sans-serif;
+}
+
+.drop {
+    box-shadow: 10px 10px 10px violet;
+}
+
+.drop>div.inner {
+    text-shadow: 2px 2px violet;
+}
+
+.glow {
+    box-shadow: 0 0 10px 10px violet;
+}
+
+.glow>.inner {
+    color: White;
+    text-shadow: 2px 2px 4px Black;
+}
+
+.inset {
+    box-shadow: 10px 10px 30px violet inset;
+}
+
+.inset>.inner {
+    color: white;
+    text-shadow: -1px 0 Black, 0 1px Black, 1px 0 Black, 0 -1px Black;
+}
